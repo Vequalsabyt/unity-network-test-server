@@ -4,8 +4,9 @@ const app = express();
 app.use(express.json());
 
 let gameState = {
-  activePlayer: "Lady"
+  activePlayer: "Eagle" // switch manually for testing
 };
+
 
 app.get("/state", (req, res) => {
   res.json(gameState);
