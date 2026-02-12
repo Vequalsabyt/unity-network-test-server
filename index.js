@@ -1,11 +1,22 @@
 const express = require("express");
 const app = express();
 
+app.use(express.json());
+
+let gameState = {
+  activePlayer: "Lady"
+};
+
+app.get("/state", (req, res) => {
+  res.json(gameState);
+});
+
 app.get("/ping", (req, res) => {
-    res.json({ message: "Hello from server!" });
+  res.send("Server is alive!");
 });
 
 const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
