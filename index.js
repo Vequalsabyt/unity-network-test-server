@@ -4,7 +4,7 @@ const app = express();
 app.use(express.json());
 
 let gameState = {
-  activePlayer: "Eagle" // switch manually for testing
+  activePlayer: "Lady" // switch manually for testing
 };
 
 
