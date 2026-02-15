@@ -22,4 +22,9 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
+app.get("/switchturn", (req, res) => {
+    gameState.activePlayer =
+        gameState.activePlayer === "Lady" ? "Eagle" : "Lady";
 
+    res.json(gameState);
+});
